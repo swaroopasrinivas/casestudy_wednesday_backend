@@ -8,10 +8,13 @@ import {CartComponent} from './pages/cart/cart.component';
 import {AuthGuard} from "./_guards/auth.guard";
 import {OrderComponent} from "./pages/order/order.component";
 import {OrderDetailComponent} from "./pages/order-detail/order-detail.component";
+import {OrderDashboardComponent} from "./order-dashboard/order-dashboard.component";
+import {CreateOrderComponent} from "./create-order/create-order.component";
 import {ProductListComponent} from "./pages/product-list/product.list.component";
 import {UserDetailComponent} from "./pages/user-edit/user-detail.component";
 import {ProductEditComponent} from "./pages/product-edit/product-edit.component";
 import {Role} from "./enum/Role";
+
 
 const routes: Routes = [
     {path: '', redirectTo: '/product', pathMatch: 'full'},
@@ -19,6 +22,8 @@ const routes: Routes = [
     {path: 'category/:id', component: CardComponent},
     {path: 'product', component: CardComponent},
     {path: 'category', component: CardComponent},
+    {path: 'order-dashboard', component: OrderDashboardComponent},
+    {path: 'create-order', component: CreateOrderComponent},
     {path: 'login', component: LoginComponent},
     {path: 'logout', component: LoginComponent},
     {path: 'register', component: SignupComponent},

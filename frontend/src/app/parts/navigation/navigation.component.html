@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; width: 100%">
-    <a class="navbar-brand" [routerLink]="root">
+    <a class="navbar-brand" [routerLink]="/order-dashboard">
 <!--        <img src="/assets/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">-->
         Retail Order Management
     </a>
@@ -13,11 +13,11 @@
         <div class="navbar-nav" *ngIf="!currentUser || currentUser.role == Role.Customer">
 
             <a class="nav-item nav-link "
-               routerLink="/category/0">
+               routerLink="/order-dashboard">
                 Order Dashboard
             </a>
             <a class="nav-item nav-link"
-               routerLink="/category/1">
+               routerLink="/create-order">
                 Create Order
             </a>
 <!--            <a class="nav-item nav-link "-->

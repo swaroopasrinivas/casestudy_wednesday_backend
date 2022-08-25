@@ -1,5 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { MatTableModule } from '@angular/material/table'
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import {AppComponent} from './app.component';
 import {NavigationComponent} from './parts/navigation/navigation.component';
@@ -20,6 +22,8 @@ import {OrderDetailComponent} from './pages/order-detail/order-detail.component'
 import {ProductListComponent} from './pages/product-list/product.list.component';
 import {UserDetailComponent} from './pages/user-edit/user-detail.component';
 import {ProductEditComponent} from './pages/product-edit/product-edit.component';
+import { OrderDashboardComponent } from './order-dashboard/order-dashboard.component';
+import { CreateOrderComponent } from './create-order/create-order.component';
 
 @NgModule({
     declarations: [
@@ -36,12 +40,16 @@ import {ProductEditComponent} from './pages/product-edit/product-edit.component'
         ProductListComponent,
         UserDetailComponent,
         ProductEditComponent,
+        OrderDashboardComponent,
+        CreateOrderComponent,
 
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+        MatTableModule,
+        MatCheckboxModule,
         HttpClientModule,
 
     ],
