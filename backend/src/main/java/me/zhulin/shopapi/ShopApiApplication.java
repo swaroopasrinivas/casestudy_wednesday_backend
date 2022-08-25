@@ -1,5 +1,7 @@
 package me.zhulin.shopapi;
 
+import org.apache.logging.log4j.message.Message;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -17,6 +19,8 @@ public class ShopApiApplication {
         return new BCryptPasswordEncoder();
     }
 
+    @Autowired
+    private ApplicationContextProvider applicationContextProvider;
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurerAdapter() {
@@ -27,6 +31,11 @@ public class ShopApiApplication {
         };
     }
 
+    public void run(String... args) throws Exception {
+        Message message = applicationContextProvider.getApplicationContext().getBean(Message.class);
+
+        System.out.println(message);
+    }
     public static void main(String[] args) {
         SpringApplication.run(ShopApiApplication.class, args);
     }
