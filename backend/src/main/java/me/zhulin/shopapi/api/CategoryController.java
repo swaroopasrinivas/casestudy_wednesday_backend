@@ -36,7 +36,10 @@ public class CategoryController {
                                 @RequestParam(value = "page", defaultValue = "1") Integer page,
                                 @RequestParam(value = "size", defaultValue = "3") Integer size) {
 
+        System.out.println("Hiii");
         ProductCategory cat = categoryService.findByCategoryType(categoryType);
+        System.out.println(""+cat.getCategoryId());
+
         PageRequest request = PageRequest.of(page - 1, size);
         Page<ProductInfo> productInCategory = productService.findAllInCategory(categoryType, request);
         var tmp = new CategoryPage("", productInCategory);
